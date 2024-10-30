@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Login Form</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+    }
+    .login-form {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+    .login-form h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .input-group {
+      margin-bottom: 15px;
+    }
+    .input-group label {
+      display: block;
+      text-align: left;
+      color: #666;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .input-group input:focus {
+      outline: none;
+      border-color: #5b9bd5;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #5b9bd5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .login-btn:hover {
+      background-color: #4a8ac9;
+    }
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-form">
+    <h2>Login</h2>
+    <div class="input-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username">
+    </div>
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password">
+    </div>
+    <button class="login-btn" onclick="login()">Login</button>
+    <p class="error-message" id="error-message"></p>
+  </div>
+
+  <script>
+    function login() {
+      // Get the values entered by the user
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorMessage = document.getElementById('error-message');
+
+      // Clear any previous error messages
+      errorMessage.textContent = '';
+
+      // Simple validation for demo purposes
+      if (username === 'user' && password === 'pass123') {
+        alert('Login successful!');
+      } else {
+        errorMessage.textContent = 'Invalid username or password';
+      }
+    }
+  </script>
+
+</body>
+</html>
